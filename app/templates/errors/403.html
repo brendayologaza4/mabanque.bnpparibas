@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Accès refusé{% endblock %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <img src="{{ url_for('static', filename='images/logos/bnp-logo.png') }}" alt="Logo BNP" style="height: 100px;">
+    <h1 class="display-4 text-danger mt-4">403</h1>
+    <h2 class="mb-3">Accès refusé</h2>
+    <p class="lead">Vous n'avez pas la permission d’accéder à cette page.</p>
+    <a href="{{ url_for('main.home') }}" class="btn btn-primary mt-3">Retour à l'accueil</a>
+</div>
+{% endblock %}

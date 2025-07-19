@@ -1,0 +1,11 @@
+
+services:
+  - type: web
+    name: mon-robot-trader
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    plan: free
+    envVars:
+      - key: FLASK_ENV
+        value: production

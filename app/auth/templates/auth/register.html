@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Inscription - Ma Banque BNP Paribas{% endblock %}
+
+{% block content %}
+<h2>Inscription</h2>
+<form method="POST" action="{{ url_for('auth.register') }}">
+    {{ form.hidden_tag() }}
+
+    <label for="full_name">Nom complet :</label>
+    {{ form.full_name(size=32) }}
+
+    <label for="email">Email :</label>
+    {{ form.email(size=32) }}
+
+    <label for="password">Mot de passe :</label>
+    {{ form.password() }}
+
+    <label for="password_confirm">Confirmer mot de passe :</label>
+    {{ form.password_confirm() }}
+
+    {{ form.submit() }}
+</form>
+<p>Déjà inscrit ? <a href="{{ url_for('auth.login') }}">Connectez-vous</a></p>
+{% endblock %}
